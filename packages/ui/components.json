@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/styles/globals.css",
+    "baseColor": "zinc",
+    "cssVariables": true
+  },
+  "iconLibrary": "lucide",
+  "aliases": {
+    "components": "@r/ui/components",
+    "utils": "@r/ui/lib/utils",
+    "ui": "@r/ui/components",
+    "lib": "@r/ui/lib",
+    "hooks": "@r/ui/hooks"
+  },
+  "registries": {
+    "@hextaui": "https://hextaui.com/r/{name}.json",
+    "@animate-ui": "https://animate-ui.com/r/{name}.json",
+    "@smoothui": "https://smoothui.dev/r/{name}.json"
+  }
+}

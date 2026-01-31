@@ -1,0 +1,34 @@
+{
+  "name": "web",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@r/ui": "workspace:*",
+    "immer": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-router": "catalog:",
+    "tailwindcss": "catalog:ui",
+    "zustand": "catalog:"
+  },
+  "devDependencies": {
+    "@lingui/babel-plugin-lingui-macro": "catalog:dev",
+    "@lingui/vite-plugin": "catalog:dev",
+    "@tailwindcss/vite": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "@types/react": "catalog:dev",
+    "@types/react-dom": "catalog:dev",
+    "@vitejs/plugin-react": "catalog:dev",
+    "babel-plugin-react-compiler": "catalog:dev",
+    "globals": "catalog:dev",
+    "typescript": "catalog:dev",
+    "vite": "catalog:dev"
+  }
+}
