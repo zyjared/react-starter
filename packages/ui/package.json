@@ -13,6 +13,9 @@
     },
     "./components/*": "./src/components/*",
     "./lib/*": "./src/lib/*",
+    "./hooks/*": "./src/hooks/*",
+    "./icons": "./src/icons.ts",
+    "./icons/*": "./src/icons/*",
     "./globals.css": "./src/styles/globals.css"
   },
   "main": "./src/index.ts",
@@ -21,8 +24,8 @@
     "src"
   ],
   "dependencies": {
-    "@radix-ui/react-dropdown-menu": "catalog:ui",
-    "@radix-ui/react-slot": "catalog:ui",
+    "@base-ui-components/react": "catalog:ui",
+    "@floating-ui/react": "catalog:ui",
     "class-variance-authority": "catalog:ui",
     "clsx": "catalog:ui",
     "lucide-react": "catalog:ui",
@@ -37,6 +40,7 @@
   },
   "devDependencies": {
     "@types/node": "catalog:dev",
-    "@types/react": "catalog:dev"
+    "@types/react": "catalog:dev",
+    "shadcn": "catalog:ui"
   }
 }
