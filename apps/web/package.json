@@ -12,6 +12,7 @@
   "dependencies": {
     "@r/ui": "workspace:*",
     "immer": "catalog:",
+    "lucide-react": "catalog:ui",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-router": "catalog:",

@@ -9,21 +9,21 @@ import {
   TooltipTrigger,
 } from '@r/ui/components/animate-ui/components/animate/tooltip'
 import {
+  Highlight,
+  HighlightItem,
+} from '@r/ui/components/animate-ui/primitives/effects/highlight'
+import { Button } from '@r/ui/components/ui/button'
+
+import { Input } from '@r/ui/components/ui/input'
+import { Separator } from '@r/ui/components/ui/separator'
+import {
   Sheet,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from '@r/ui/components/animate-ui/components/radix/sheet'
-import {
-  Highlight,
-  HighlightItem,
-} from '@r/ui/components/animate-ui/primitives/effects/highlight'
-
-import { Button } from '@r/ui/components/button'
-import { Input } from '@r/ui/components/input'
-import { Separator } from '@r/ui/components/separator'
-import { Skeleton } from '@r/ui/components/skeleton'
+} from '@r/ui/components/ui/sheet'
+import { Skeleton } from '@r/ui/components/ui/skeleton'
 import { useIsMobile } from '@r/ui/hooks/use-mobile'
 import { getStrictContext } from '@r/ui/lib/get-strict-context'
 import { cn } from '@r/ui/lib/utils'

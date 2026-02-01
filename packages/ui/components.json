@@ -20,6 +20,7 @@
   "registries": {
     "@hextaui": "https://hextaui.com/r/{name}.json",
     "@animate-ui": "https://animate-ui.com/r/{name}.json",
-    "@smoothui": "https://smoothui.dev/r/{name}.json"
+    "@smoothui": "https://smoothui.dev/r/{name}.json",
+    "@forgeui": "https://forgeui.in/r/{name}.json"
   }
 }

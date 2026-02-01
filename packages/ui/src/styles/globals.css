@@ -121,3 +121,76 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .graph {
+    transform-origin: center;
+  }
+
+  .graph-light-1 {
+    animation: graph-move-1 2.8s linear infinite;
+  }
+
+  .graph-stroke {
+    stroke-dasharray: 360;
+    stroke-dashoffset: 360;
+    animation: graph-stroke-draw 3s ease-in-out infinite;
+  }
+
+  @keyframes graph-move-1 {
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(340px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes graph-stroke-draw {
+    0% {
+      stroke-dashoffset: 360;
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    70% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0;
+    }
+  }
+
+  .photon-signal {
+    transform-origin: center;
+    animation: photon-move 4s ease-in-out infinite;
+  }
+
+  @keyframes photon-move {
+    0% {
+      transform: translateX(-24px);
+      opacity: 0;
+    }
+    12% {
+      opacity: 1;
+    }
+    82% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(320px);
+      opacity: 0;
+    }
+  }
+}

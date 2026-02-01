@@ -10,9 +10,11 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
+  ScrollArea,
+  Separator,
+} from '@r/ui'
+
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
@@ -21,65 +23,44 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-  Separator,
+} from '@r/ui/components/animate-ui/components/radix/dropdown-menu.tsx'
+import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarInset,
   SidebarMenu,
-  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
   SidebarProvider,
   SidebarRail,
   SidebarTrigger,
-} from '@r/ui'
+} from '@r/ui/components/animate-ui/components/radix/sidebar.tsx'
+import { useIsMobile } from '@r/ui/hooks/use-mobile.ts'
 
-import { useIsMobile } from '@r/ui/hooks/use-mobile'
 import {
   AudioWaveform,
   BadgeCheck,
   Bell,
-  BookOpen,
-  Bot,
-  ChevronRight,
   ChevronsUpDown,
-  Command,
-  Compass,
   CreditCard,
-  Folder,
-  Forward,
   Frame,
   GalleryVerticalEnd,
   LogOut,
   Map,
-  MoreHorizontal,
   PieChart,
-  Plus,
-  Settings2,
   Sparkles,
-  SquareTerminal,
-  Trash2,
-} from '@r/ui/icons'
-
+} from 'lucide-react'
 import * as React from 'react'
-
-interface AppLayoutProps {
-  children?: React.ReactNode
-}
 
 const DATA = {
   user: {
-    name: 'Skyleen',
-    email: 'skyleen@example.com',
+    name: 'R',
+    email: 'zyjared@outlook.com',
     avatar:
-      'https://pbs.twimg.com/profile_images/1909615404789506048/MTqvRsjo_400x400.jpg',
+      'https://zyjared.com/avatar.png',
   },
   teams: [
     {
@@ -92,80 +73,30 @@ const DATA = {
       logo: AudioWaveform,
       plan: 'Startup',
     },
-    {
-      name: 'Evil Corp.',
-      logo: Command,
-      plan: 'Free',
-    },
   ],
   navMain: [
     {
       title: '探索',
       url: '#',
-      icon: Compass,
-      isActive: true,
-      items: [
-        {
-          title: '全部探索',
-          url: '#',
-        },
-        {
-          title: '推荐场景',
-          url: '#',
-        },
-      ],
+      icon: Frame,
     },
     {
       title: '创作',
       url: '#',
-      icon: Sparkles,
-      items: [
-        {
-          title: '创作画布',
-          url: '#',
-        },
-        {
-          title: '模版',
-          url: '#',
-        },
-      ],
+      icon: PieChart,
     },
     {
       title: '作品集',
       url: '#',
-      icon: GalleryVerticalEnd,
-      items: [
-        {
-          title: '全部作品',
-          url: '#',
-        },
-        {
-          title: '已发布',
-          url: '#',
-        },
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: 'Design Engineering',
-      url: '#',
-      icon: Frame,
-    },
-    {
-      name: 'Sales & Marketing',
-      url: '#',
-      icon: PieChart,
-    },
-    {
-      name: 'Travel',
-      url: '#',
       icon: Map,
     },
   ],
+  projects: [
+
+  ],
 }
 
-export function AppLayout({ children }: AppLayoutProps) {
+export function AppLayout({ children }: { children?: React.ReactNode }) {
   const isMobile = useIsMobile()
   const [activeTeam, setActiveTeam] = React.useState(DATA.teams[0])
 
@@ -224,15 +155,6 @@ export function AppLayout({ children }: AppLayoutProps) {
                       </DropdownMenuShortcut>
                     </DropdownMenuItem>
                   ))}
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem className="gap-2 p-2">
-                    <div className="flex size-6 items-center justify-center rounded-md border bg-background">
-                      <Plus className="size-4" />
-                    </div>
-                    <div className="font-medium text-muted-foreground">
-                      Add team
-                    </div>
-                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </SidebarMenuItem>
@@ -243,92 +165,21 @@ export function AppLayout({ children }: AppLayoutProps) {
         <SidebarContent>
           {/* Nav Main */}
           <SidebarGroup>
-            <SidebarGroupLabel>Platform</SidebarGroupLabel>
             <SidebarMenu>
               {DATA.navMain.map(item => (
-                <Collapsible
-                  key={item.title}
-                  asChild
-                  defaultOpen={item.isActive}
-                  className="group/collapsible"
-                >
-                  <SidebarMenuItem>
-                    <CollapsibleTrigger asChild>
-                      <SidebarMenuButton tooltip={item.title}>
-                        {item.icon && <item.icon />}
-                        <span>{item.title}</span>
-                        <ChevronRight className="ml-auto transition-transform duration-300 group-data-[state=open]/collapsible:rotate-90" />
-                      </SidebarMenuButton>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent>
-                      <SidebarMenuSub>
-                        {item.items?.map(subItem => (
-                          <SidebarMenuSubItem key={subItem.title}>
-                            <SidebarMenuSubButton asChild>
-                              <a href={subItem.url}>
-                                <span>{subItem.title}</span>
-                              </a>
-                            </SidebarMenuSubButton>
-                          </SidebarMenuSubItem>
-                        ))}
-                      </SidebarMenuSub>
-                    </CollapsibleContent>
-                  </SidebarMenuItem>
-                </Collapsible>
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild tooltip={item.title}>
+                    <a href={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
               ))}
             </SidebarMenu>
           </SidebarGroup>
           {/* Nav Main */}
 
-          {/* Nav Project */}
-          <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
-            <SidebarMenu>
-              {DATA.projects.map(item => (
-                <SidebarMenuItem key={item.name}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.name}</span>
-                    </a>
-                  </SidebarMenuButton>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <SidebarMenuAction showOnHover>
-                        <MoreHorizontal />
-                        <span className="sr-only">More</span>
-                      </SidebarMenuAction>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                      className="w-48 rounded-lg"
-                      side={isMobile ? 'bottom' : 'right'}
-                      align={isMobile ? 'end' : 'start'}
-                    >
-                      <DropdownMenuItem>
-                        <Folder className="text-muted-foreground" />
-                        <span>View Project</span>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem>
-                        <Forward className="text-muted-foreground" />
-                        <span>Share Project</span>
-                      </DropdownMenuItem>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem>
-                        <Trash2 className="text-muted-foreground" />
-                        <span>Delete Project</span>
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </SidebarMenuItem>
-              ))}
-              <SidebarMenuItem>
-                <SidebarMenuButton className="text-sidebar-foreground/70">
-                  <MoreHorizontal className="text-sidebar-foreground/70" />
-                  <span>More</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroup>
           {/* Nav Project */}
         </SidebarContent>
         <SidebarFooter>
@@ -423,37 +274,40 @@ export function AppLayout({ children }: AppLayoutProps) {
       </Sidebar>
 
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-          <div className="flex items-center gap-2 px-4">
-            <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 h-4" />
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    Building Your Application
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
-        </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          {children ?? (
+
+        {
+          children || (
             <>
-              <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                <div className="aspect-video rounded-xl bg-muted/50" />
-                <div className="aspect-video rounded-xl bg-muted/50" />
-                <div className="aspect-video rounded-xl bg-muted/50" />
+              <header className="sticky left-0 top-0 h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
+                <div className="flex items-center gap-2">
+                  <SidebarTrigger className="-ml-1" />
+                  <Separator orientation="vertical" className="mr-2 h-4" />
+                  <Breadcrumb>
+                    <BreadcrumbList>
+                      <BreadcrumbItem className="hidden md:block">
+                        <BreadcrumbLink href="#">
+                          Building Your Application
+                        </BreadcrumbLink>
+                      </BreadcrumbItem>
+                      <BreadcrumbSeparator className="hidden md:block" />
+                      <BreadcrumbItem>
+                        <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                      </BreadcrumbItem>
+                    </BreadcrumbList>
+                  </Breadcrumb>
+                </div>
+              </header>
+              <div className="flex flex-1 flex-col gap-4 pt-0">
+                <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+                  <div className="aspect-video rounded-xl bg-muted/50" />
+                  <div className="aspect-video rounded-xl bg-muted/50" />
+                  <div className="aspect-video rounded-xl bg-muted/50" />
+                </div>
+                <div className="min-h-screen flex-1 rounded-xl bg-muted/50" />
               </div>
-              <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
             </>
-          )}
-        </div>
+          )
+        }
       </SidebarInset>
     </SidebarProvider>
   )
