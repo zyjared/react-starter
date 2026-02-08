@@ -13,7 +13,7 @@
   "aliases": {
     "components": "@r/ui/components",
     "utils": "@r/ui/lib/utils",
-    "ui": "@r/ui/components",
+    "ui": "@r/ui/primitives",
     "lib": "@r/ui/lib",
     "hooks": "@r/ui/hooks"
   },
@@ -21,6 +21,8 @@
     "@hextaui": "https://hextaui.com/r/{name}.json",
     "@animate-ui": "https://animate-ui.com/r/{name}.json",
     "@smoothui": "https://smoothui.dev/r/{name}.json",
-    "@forgeui": "https://forgeui.in/r/{name}.json"
+    "@forgeui": "https://forgeui.in/r/{name}.json",
+    "@react-bits": "https://reactbits.dev/r/{name}.json",
+    "@ai-elements": "https://ai-sdk.dev/elements/api/registry/{name}.json"
   }
 }

@@ -12,6 +12,36 @@ export default antfu({
 
   },
   ignores: [
-    'src/locales/*/messages.ts',
+    'apps/web/src/locales/*/messages.ts',
   ],
+}, {
+  files: ['apps/web/src/**/*.{ts,tsx}'],
+  rules: {
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: [
+          {
+            group: ['@/features/*/*'],
+            message: '禁止跨 Feature 深层导入，请改用公共入口：@/features/<feature>',
+          },
+        ],
+      },
+    ],
+  },
+}, {
+  files: ['apps/web/src/features/**/*.{ts,tsx}'],
+  rules: {
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: [
+          {
+            group: ['@/layout/**', '@/router/**'],
+            message: 'Feature 不允许依赖 layout/router；请依赖 shared/ui 或其他 Feature 的公共入口。',
+          },
+        ],
+      },
+    ],
+  },
 })

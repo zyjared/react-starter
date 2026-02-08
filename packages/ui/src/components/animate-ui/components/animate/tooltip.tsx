@@ -1,4 +1,9 @@
-import type { TooltipContentProps as TooltipContentPrimitiveProps, TooltipProps as TooltipPrimitiveProps, TooltipProviderProps as TooltipProviderPrimitiveProps, TooltipTriggerProps as TooltipTriggerPrimitiveProps } from '@r/ui/components/animate-ui/primitives/animate/tooltip'
+import type {
+  TooltipContentProps as TooltipContentPrimitiveProps,
+  TooltipProps as TooltipPrimitiveProps,
+  TooltipProviderProps as TooltipProviderPrimitiveProps,
+  TooltipTriggerProps as TooltipTriggerPrimitiveProps,
+} from '@r/ui/components/animate-ui/primitives/animate/tooltip'
 import {
   TooltipArrow as TooltipArrowPrimitive,
   TooltipContent as TooltipContentPrimitive,

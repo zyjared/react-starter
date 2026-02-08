@@ -10,8 +10,8 @@
   "scripts": {
     "dev": "pnpm --filter web dev",
     "build": "turbo run check-types build",
-    "lint": "pnpm lint",
-    "lint:fix": "pnpm lint:fix"
+    "i18n:extract": "lingui extract",
+    "i18n:compile": "lingui compile"
   },
   "dependencies": {
     "@lingui/core": "catalog:",
@@ -22,6 +22,7 @@
     "@eslint-react/eslint-plugin": "catalog:lint",
     "@eslint/js": "catalog:lint",
     "@lingui/cli": "catalog:dev",
+    "@types/node": "catalog:dev",
     "eslint": "catalog:lint",
     "eslint-plugin-react-hooks": "catalog:lint",
     "eslint-plugin-react-refresh": "catalog:lint",

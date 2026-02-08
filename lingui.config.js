@@ -6,8 +6,8 @@ export default defineConfig({
   compileNamespace: 'ts',
   catalogs: [
     {
-      path: '<rootDir>/packages/locale/web/{locale}/messages',
-      include: ['apps/web'],
+      path: '<rootDir>/apps/web/src/locales/{locale}/messages',
+      include: ['<rootDir>/apps/web/src/'],
     },
   ],
 })
