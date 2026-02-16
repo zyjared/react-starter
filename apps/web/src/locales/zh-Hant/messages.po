@@ -1,0 +1,164 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2026-02-16 20:30+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: zh-Hant\n"
+
+#: apps/web/src/config.ts:9
+msgid "A React Starter Kit"
+msgstr "React 起步套件"
+
+#: apps/web/src/config.ts:8
+msgid "React Starter"
+msgstr "React 起步"
+
+#: apps/web/src/pages/home.tsx:20
+msgid "一个注重效率的 React 起步模板"
+msgstr "一個注重效率的 React 起步範本"
+
+#: apps/web/src/pages/home.tsx:50
+msgid "下一步"
+msgstr "下一步"
+
+#: apps/web/src/config.ts:42
+msgid "个人中心"
+msgstr "個人中心"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:352
+msgid "主题"
+msgstr "主題"
+
+#: apps/web/src/pages/home.tsx:43
+msgid "主题、路由、国际化已准备就绪"
+msgstr "主題、路由、國際化已準備就緒"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:212
+msgid "亮色"
+msgstr "淺色"
+
+#: apps/web/src/pages/not-found.tsx:17
+msgid "你访问的页面已被移除或暂时不可用"
+msgstr "你訪問的頁面已被移除或暫時不可用"
+
+#: apps/web/src/pages/home.tsx:57
+msgid "保持布局一致，功能扩展更顺畅"
+msgstr "保持版面一致，功能擴充更順暢"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:239
+msgid "冰川"
+msgstr "冰川"
+
+#: apps/web/src/pages/not-found.tsx:28
+msgid "前往聊天"
+msgstr "前往聊天"
+
+#: apps/web/src/pages/home.tsx:53
+msgid "在 pages 中新增页面并接入路由"
+msgstr "在 pages 中新增頁面並接入路由"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:216
+msgid "暗色"
+msgstr "深色"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:227
+msgid "极光"
+msgstr "極光"
+
+#: apps/web/src/pages/home.tsx:30
+msgid "查看设置"
+msgstr "查看設定"
+
+#: apps/web/src/pages/home.tsx:40
+msgid "核心能力"
+msgstr "核心能力"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:235
+msgid "森林"
+msgstr "森林"
+
+#: apps/web/src/pages/home.tsx:17
+msgid "欢迎使用 React Starter"
+msgstr "歡迎使用 React Starter"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:247
+msgid "流明"
+msgstr "流明"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:251
+msgid "玫晓"
+msgstr "玫曉"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:268
+msgid "登录"
+msgstr "登入"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:208
+msgid "系统"
+msgstr "系統"
+
+#: apps/web/src/config.ts:24
+msgid "聊天"
+msgstr "聊天"
+
+#: apps/web/src/config.ts:32
+msgid "菜单"
+msgstr "選單"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:255
+msgid "落日"
+msgstr "落日"
+
+#: apps/web/src/config.ts:36
+msgid "设置"
+msgstr "設定"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:386
+msgid "语言"
+msgstr "語言"
+
+#: apps/web/src/config.ts:52
+msgid "账号"
+msgstr "帳號"
+
+#: apps/web/src/pages/not-found.tsx:23
+msgid "返回首页"
+msgstr "返回首頁"
+
+#: apps/web/src/pages/home.tsx:25
+msgid "进入聊天"
+msgstr "進入聊天"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:402
+msgid "退出登录"
+msgstr "登出"
+
+#: apps/web/src/config.ts:56
+msgid "通知"
+msgstr "通知"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:368
+msgid "配色"
+msgstr "配色"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:231
+msgid "雪松"
+msgstr "雪松"
+
+#: apps/web/src/pages/not-found.tsx:14
+msgid "页面不存在"
+msgstr "頁面不存在"
+
+#: apps/web/src/config.ts:17
+msgid "首页"
+msgstr "首頁"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:243
+msgid "墨岚"
+msgstr "墨嵐"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:223
+msgid "默认"
+msgstr "預設"

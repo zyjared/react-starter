@@ -1,0 +1,59 @@
+{
+  "name": "web",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "catalog:",
+    "@lingui/core": "catalog:",
+    "@lingui/react": "catalog:",
+    "@r/shared": "workspace:*",
+    "@r/ui": "workspace:*",
+    "@streamdown/cjk": "catalog:",
+    "@streamdown/code": "catalog:",
+    "@streamdown/math": "catalog:",
+    "@streamdown/mermaid": "catalog:",
+    "@tanstack/react-query": "catalog:",
+    "ai": "catalog:",
+    "axios": "catalog:",
+    "immer": "catalog:",
+    "lucide-react": "catalog:ui",
+    "motion": "catalog:ui",
+    "nanoid": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-hook-form": "catalog:",
+    "react-router": "catalog:",
+    "sonner": "catalog:ui",
+    "streamdown": "catalog:",
+    "tailwindcss": "catalog:ui",
+    "zod": "catalog:",
+    "zustand": "catalog:"
+  },
+  "devDependencies": {
+    "@lingui/babel-plugin-lingui-macro": "catalog:dev",
+    "@lingui/vite-plugin": "catalog:dev",
+    "@tailwindcss/vite": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "@types/react": "catalog:dev",
+    "@types/react-dom": "catalog:dev",
+    "@vitejs/plugin-react": "catalog:dev",
+    "babel-plugin-react-compiler": "catalog:dev",
+    "globals": "catalog:dev",
+    "msw": "catalog:dev",
+    "typescript": "catalog:dev",
+    "vite": "catalog:dev"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  }
+}

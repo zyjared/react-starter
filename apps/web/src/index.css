@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@source "../src";
+@source "../../../packages/ui/src";
+
+@import "@r/ui/styles/theme.css";
+
+@import "@r/ui/styles/theme-aurora.css";
+@import "@r/ui/styles/theme-cedar.css";
+@import "@r/ui/styles/theme-forest.css";
+@import "@r/ui/styles/theme-glacier.css";
+@import "@r/ui/styles/theme-ink.css";
+@import "@r/ui/styles/theme-lumina.css";
+@import "@r/ui/styles/theme-rosedawn.css";
+@import "@r/ui/styles/theme-sunset.css";

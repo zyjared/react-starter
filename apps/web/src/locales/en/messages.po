@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2026-02-09 00:03+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: apps/web/src/config.ts:9
+msgid "A React Starter Kit"
+msgstr "A React Starter Kit"
+
+#: apps/web/src/pages/ai.tsx:6
+#~ msgid "AI"
+#~ msgstr "AI"
+
+#: apps/web/src/config.ts:8
+msgid "React Starter"
+msgstr "React Starter"
+
+#: apps/web/src/pages/home.tsx:20
+msgid "一个注重效率的 React 起步模板"
+msgstr "A productivity-focused React starter template"
+
+#: apps/web/src/pages/home.tsx:50
+msgid "下一步"
+msgstr "Next Steps"
+
+#: apps/web/src/config.ts:42
+msgid "个人中心"
+msgstr "Profile"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:352
+msgid "主题"
+msgstr "Theme"
+
+#: apps/web/src/pages/home.tsx:43
+msgid "主题、路由、国际化已准备就绪"
+msgstr "Theme, routing, and i18n are ready to go"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:212
+msgid "亮色"
+msgstr "Light"
+
+#: apps/web/src/pages/not-found.tsx:17
+msgid "你访问的页面已被移除或暂时不可用"
+msgstr "The page you're looking for was removed or is temporarily unavailable"
+
+#: apps/web/src/pages/home.tsx:57
+msgid "保持布局一致，功能扩展更顺畅"
+msgstr "Keep layout consistent for smooth feature expansion"
+
+#: apps/web/src/pages/about.tsx:6
+#~ msgid "关于"
+#~ msgstr "About"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:239
+msgid "冰川"
+msgstr "Glacier"
+
+#: apps/web/src/app.tsx:33
+#~ msgid "创建项目"
+#~ msgstr "Create Project"
+
+#: apps/web/src/pages/not-found.tsx:28
+msgid "前往聊天"
+msgstr "Go to Chat"
+
+#: apps/web/src/pages/home.tsx:53
+msgid "在 pages 中新增页面并接入路由"
+msgstr "Add new pages and wire them into routing"
+
+#: apps/web/src/app.tsx:27
+#~ msgid "基于 React 的项目模板"
+#~ msgstr "React Starter Template"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:216
+msgid "暗色"
+msgstr "Dark"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:227
+msgid "极光"
+msgstr "Aurora"
+
+#: apps/web/src/pages/home.tsx:30
+msgid "查看设置"
+msgstr "View Settings"
+
+#: apps/web/src/pages/home.tsx:40
+msgid "核心能力"
+msgstr "Core Capabilities"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:235
+msgid "森林"
+msgstr "Forest"
+
+#: apps/web/src/pages/home.tsx:17
+msgid "欢迎使用 React Starter"
+msgstr "Welcome to React Starter"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:247
+msgid "流明"
+msgstr "Lumen"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:251
+msgid "玫晓"
+msgstr "Rose Dawn"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:268
+msgid "登录"
+msgstr "Login"
+
+#: apps/web/src/app.tsx:38
+#~ msgid "管理项目"
+#~ msgstr "Manage Projects"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:208
+msgid "系统"
+msgstr "System"
+
+#: apps/web/src/config.ts:24
+msgid "聊天"
+msgstr "Chat"
+
+#: apps/web/src/config.ts:32
+msgid "菜单"
+msgstr "Menu"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:255
+msgid "落日"
+msgstr "Sunset"
+
+#: apps/web/src/config.ts:36
+msgid "设置"
+msgstr "Settings"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:386
+msgid "语言"
+msgstr "Language"
+
+#: apps/web/src/config.ts:52
+msgid "账号"
+msgstr "Account"
+
+#: apps/web/src/pages/not-found.tsx:23
+msgid "返回首页"
+msgstr "Back to Home"
+
+#: apps/web/src/pages/home.tsx:10
+#~ msgid "进入 Main"
+#~ msgstr "Go to Main"
+
+#: apps/web/src/pages/home.tsx:25
+msgid "进入聊天"
+msgstr "Enter Chat"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:402
+msgid "退出登录"
+msgstr "Logout"
+
+#: apps/web/src/config.ts:56
+msgid "通知"
+msgstr "Notifications"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:368
+msgid "配色"
+msgstr "Color Scheme"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:231
+msgid "雪松"
+msgstr "Cedar"
+
+#: apps/web/src/pages/not-found.tsx:14
+msgid "页面不存在"
+msgstr "Page not found"
+
+#: apps/web/src/config.ts:17
+msgid "首页"
+msgstr "Home"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:243
+msgid "墨岚"
+msgstr "Ink Mist"
+
+#: apps/web/src/layout/default/sidebar/app.tsx:223
+msgid "默认"
+msgstr "Default"

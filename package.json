@@ -1,0 +1,33 @@
+{
+  "name": "r",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.29.3",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "turbo run check-types build",
+    "i18n:extract": "lingui extract",
+    "i18n:compile": "lingui compile"
+  },
+  "dependencies": {
+    "@lingui/core": "catalog:",
+    "@lingui/react": "catalog:"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:lint",
+    "@eslint-react/eslint-plugin": "catalog:lint",
+    "@eslint/js": "catalog:lint",
+    "@lingui/cli": "catalog:dev",
+    "@types/node": "catalog:dev",
+    "eslint": "catalog:lint",
+    "eslint-plugin-react-hooks": "catalog:lint",
+    "eslint-plugin-react-refresh": "catalog:lint",
+    "turbo": "catalog:dev",
+    "typescript": "catalog:dev",
+    "typescript-eslint": "catalog:dev"
+  }
+}

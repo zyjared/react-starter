@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2022",
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "moduleDetection": "force",
+    "useDefineForClassFields": true,
+
+    "baseUrl": ".",
+    "module": "ESNext",
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@r/i18n": ["../../packages/i18n/src/index.ts"],
+      "@r/i18n/router": ["../../packages/i18n/src/router/index.ts"],
+      "@r/i18n/router/*": ["../../packages/i18n/src/router/*"],
+      "@r/i18n/*": ["../../packages/i18n/src/*"],
+      "@r/shared/*": ["../../packages/shared/src/*"],
+      "@r/ui/*": ["../../packages/ui/src/*"]
+    },
+    "types": ["vite/client"],
+    "allowImportingTsExtensions": true,
+
+    /* Linting */
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noEmit": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "skipLibCheck": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["src"]
+}
