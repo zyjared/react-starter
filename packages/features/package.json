@@ -1,0 +1,24 @@
+{
+  "name": "@kit/features",
+  "version": "0.0.1",
+  "private": true,
+  "exports": {
+    "./*": "./src/*"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "check-types": "tsc --noEmit -p tsconfig.json",
+    "verify": "pnpm lint && pnpm check-types"
+  },
+  "dependencies": {
+    "@kit/shared": "workspace:*",
+    "@kit/ui": "workspace:*",
+    "@tanstack/react-query": "catalog:",
+    "react": "catalog:",
+    "zustand": "catalog:"
+  }
+}
