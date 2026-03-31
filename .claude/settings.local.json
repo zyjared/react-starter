@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(vp help:*)",
+      "Bash(vp --version)",
+      "Bash(vp run:*)",
+      "Bash(cat /c/Users/jiang/dev/js/react-starter/apps/website/src/*.tsx)",
+      "WebFetch(domain:viteplus.dev)",
+      "Bash(cat /c/Users/jiang/dev/js/react-starter/packages/utils/src/*.ts)",
+      "Bash(vp create:*)",
+      "Read(//tmp/test-app/src/**)",
+      "Read(//tmp/test-app/**)",
+      "Bash(vp add:*)"
+    ]
+  }
+}
