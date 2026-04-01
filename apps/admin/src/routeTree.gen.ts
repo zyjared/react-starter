@@ -8,70 +8,188 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as PostsRouteRouteImport } from "./routes/posts/route";
+import { Route as AppRouteRouteImport } from "./routes/_app/route";
+import { Route as AppIndexRouteImport } from "./routes/_app/index";
+import { Route as PostsPostIdRouteImport } from "./routes/posts/$postId";
+import { Route as AppTodoRouteImport } from "./routes/_app/todo";
+import { Route as AppAboutRouteImport } from "./routes/_app/about";
+import { Route as PostsCategoryChar123CategoryChar125RouteImport } from "./routes/posts/category.{-$category}";
 
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const PostsRouteRoute = PostsRouteRouteImport.update({
+  id: "/posts",
+  path: "/posts",
   getParentRoute: () => rootRouteImport,
-} as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+} as any);
+const AppRouteRoute = AppRouteRouteImport.update({
+  id: "/_app",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: "/",
+  path: "/",
+  getParentRoute: () => AppRouteRoute,
+} as any);
+const PostsPostIdRoute = PostsPostIdRouteImport.update({
+  id: "/$postId",
+  path: "/$postId",
+  getParentRoute: () => PostsRouteRoute,
+} as any);
+const AppTodoRoute = AppTodoRouteImport.update({
+  id: "/todo",
+  path: "/todo",
+  getParentRoute: () => AppRouteRoute,
+} as any);
+const AppAboutRoute = AppAboutRouteImport.update({
+  id: "/about",
+  path: "/about",
+  getParentRoute: () => AppRouteRoute,
+} as any);
+const PostsCategoryChar123CategoryChar125Route =
+  PostsCategoryChar123CategoryChar125RouteImport.update({
+    id: "/category/{-$category}",
+    path: "/category/{-$category}",
+    getParentRoute: () => PostsRouteRoute,
+  } as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  "/": typeof AppIndexRoute;
+  "/posts": typeof PostsRouteRouteWithChildren;
+  "/about": typeof AppAboutRoute;
+  "/todo": typeof AppTodoRoute;
+  "/posts/$postId": typeof PostsPostIdRoute;
+  "/posts/category/{-$category}": typeof PostsCategoryChar123CategoryChar125Route;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  "/posts": typeof PostsRouteRouteWithChildren;
+  "/about": typeof AppAboutRoute;
+  "/todo": typeof AppTodoRoute;
+  "/posts/$postId": typeof PostsPostIdRoute;
+  "/": typeof AppIndexRoute;
+  "/posts/category/{-$category}": typeof PostsCategoryChar123CategoryChar125Route;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  __root__: typeof rootRouteImport;
+  "/_app": typeof AppRouteRouteWithChildren;
+  "/posts": typeof PostsRouteRouteWithChildren;
+  "/_app/about": typeof AppAboutRoute;
+  "/_app/todo": typeof AppTodoRoute;
+  "/posts/$postId": typeof PostsPostIdRoute;
+  "/_app/": typeof AppIndexRoute;
+  "/posts/category/{-$category}": typeof PostsCategoryChar123CategoryChar125Route;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
-  fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths:
+    | "/"
+    | "/posts"
+    | "/about"
+    | "/todo"
+    | "/posts/$postId"
+    | "/posts/category/{-$category}";
+  fileRoutesByTo: FileRoutesByTo;
+  to: "/posts" | "/about" | "/todo" | "/posts/$postId" | "/" | "/posts/category/{-$category}";
+  id:
+    | "__root__"
+    | "/_app"
+    | "/posts"
+    | "/_app/about"
+    | "/_app/todo"
+    | "/posts/$postId"
+    | "/_app/"
+    | "/posts/category/{-$category}";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  AppRouteRoute: typeof AppRouteRouteWithChildren;
+  PostsRouteRoute: typeof PostsRouteRouteWithChildren;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+    "/posts": {
+      id: "/posts";
+      path: "/posts";
+      fullPath: "/posts";
+      preLoaderRoute: typeof PostsRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_app": {
+      id: "/_app";
+      path: "";
+      fullPath: "/";
+      preLoaderRoute: typeof AppRouteRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_app/": {
+      id: "/_app/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof AppIndexRouteImport;
+      parentRoute: typeof AppRouteRoute;
+    };
+    "/posts/$postId": {
+      id: "/posts/$postId";
+      path: "/$postId";
+      fullPath: "/posts/$postId";
+      preLoaderRoute: typeof PostsPostIdRouteImport;
+      parentRoute: typeof PostsRouteRoute;
+    };
+    "/_app/todo": {
+      id: "/_app/todo";
+      path: "/todo";
+      fullPath: "/todo";
+      preLoaderRoute: typeof AppTodoRouteImport;
+      parentRoute: typeof AppRouteRoute;
+    };
+    "/_app/about": {
+      id: "/_app/about";
+      path: "/about";
+      fullPath: "/about";
+      preLoaderRoute: typeof AppAboutRouteImport;
+      parentRoute: typeof AppRouteRoute;
+    };
+    "/posts/category/{-$category}": {
+      id: "/posts/category/{-$category}";
+      path: "/category/{-$category}";
+      fullPath: "/posts/category/{-$category}";
+      preLoaderRoute: typeof PostsCategoryChar123CategoryChar125RouteImport;
+      parentRoute: typeof PostsRouteRoute;
+    };
   }
 }
 
-const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+interface AppRouteRouteChildren {
+  AppAboutRoute: typeof AppAboutRoute;
+  AppTodoRoute: typeof AppTodoRoute;
+  AppIndexRoute: typeof AppIndexRoute;
 }
+
+const AppRouteRouteChildren: AppRouteRouteChildren = {
+  AppAboutRoute: AppAboutRoute,
+  AppTodoRoute: AppTodoRoute,
+  AppIndexRoute: AppIndexRoute,
+};
+
+const AppRouteRouteWithChildren = AppRouteRoute._addFileChildren(AppRouteRouteChildren);
+
+interface PostsRouteRouteChildren {
+  PostsPostIdRoute: typeof PostsPostIdRoute;
+  PostsCategoryChar123CategoryChar125Route: typeof PostsCategoryChar123CategoryChar125Route;
+}
+
+const PostsRouteRouteChildren: PostsRouteRouteChildren = {
+  PostsPostIdRoute: PostsPostIdRoute,
+  PostsCategoryChar123CategoryChar125Route: PostsCategoryChar123CategoryChar125Route,
+};
+
+const PostsRouteRouteWithChildren = PostsRouteRoute._addFileChildren(PostsRouteRouteChildren);
+
+const rootRouteChildren: RootRouteChildren = {
+  AppRouteRoute: AppRouteRouteWithChildren,
+  PostsRouteRoute: PostsRouteRouteWithChildren,
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();

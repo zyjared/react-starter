@@ -10,7 +10,9 @@
       "Bash(vp create:*)",
       "Read(//tmp/test-app/src/**)",
       "Read(//tmp/test-app/**)",
-      "Bash(vp add:*)"
+      "Bash(vp add:*)",
+      "WebFetch(domain:tanstack.com)",
+      "WebSearch"
     ]
   }
 }
