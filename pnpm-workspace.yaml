@@ -4,32 +4,50 @@ packages:
   - tools/*
 
 catalog:
-  "@mdx-js/rollup": ^3.1.1
-  "@rolldown/plugin-babel": ^0.2.2
-  "@tailwindcss/vite": ^4.2.2
   "@tanstack/react-query": ^5.96.1
   "@tanstack/react-router": ^1.168.10
   "@tanstack/react-router-devtools": ^1.166.11
   "@tanstack/router-plugin": ^1.167.12
-  "@types/node": ^24
-  "@types/react": ^19.2.14
-  "@types/react-dom": ^19.2.3
-  "@vitejs/plugin-react": ^6.0.1
-  babel-plugin-react-compiler: ^1.0.0
   react: ^19.2.4
   react-dom: ^19.2.4
   redaxios: ^0.5.1
-  tailwindcss: ^4.2.2
-  typescript: ^5
-  vite: npm:@voidzero-dev/vite-plus-core@latest
-  vite-plus: latest
-  vitest: npm:@voidzero-dev/vite-plus-test@latest
   zod: ^4.3.6
 
 catalogMode: prefer
+
+catalogs:
+  dev:
+    "@emnapi/core": ^1.9.1
+    "@emnapi/runtime": ^1.9.1
+    "@mdx-js/rollup": ^3.1.1
+    "@rolldown/plugin-babel": ^0.2.2
+    "@types/node": ^24
+    "@types/react": ^19.2.14
+    "@types/react-dom": ^19.2.3
+    "@typescript/native-preview": 7.0.0-dev.20260328.1
+    "@vitejs/plugin-react": ^6.0.1
+    babel-plugin-react-compiler: ^1.0.0
+    bumpp: ^11.0.1
+    depcat: latest
+    typescript: ^5
+    vite: npm:@voidzero-dev/vite-plus-core@latest
+    vite-plus: ^0.1.14
+    vitest: npm:@voidzero-dev/vite-plus-test@latest
+    fs-extra: ^11.3.4
+    tinyglobby: ^0.2.15
+    tsx: latest
+    "@types/fs-extra": ^11.0.1
+  ui:
+    unocss: ^66.6.7
+    "@iconify/json": ^2.2.459
+    class-variance-authority: latest
+    clsx: ^2
+    radix-ui: latest
+
 overrides:
-  vite: "catalog:"
-  vitest: "catalog:"
+  vite: "catalog:dev"
+  vitest: "catalog:dev"
+
 peerDependencyRules:
   allowAny:
     - vite

@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "@tanstack/react-router";
 import "./style.css";
 import { router } from "./router";
+import "virtual:uno.css";
 
 const rootElement = document.getElementById("app")!;
 

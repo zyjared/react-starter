@@ -1,0 +1,29 @@
+{
+  "name": "@repo/icons",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/components/*.tsx"
+  },
+  "scripts": {
+    "gen-icons": "tsx scripts/gen-icons.ts && tsx scripts/gen-index.ts",
+    "gen-icons:force": "tsx scripts/gen-icons.ts --force && tsx scripts/gen-index.ts",
+    "check": "vp check"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "catalog:dev",
+    "@types/react": "catalog:dev",
+    "@types/react-dom": "catalog:dev",
+    "fs-extra": "catalog:dev",
+    "tinyglobby": "catalog:dev",
+    "tsx": "catalog:dev",
+    "typescript": "catalog:dev",
+    "vite-plus": "catalog:dev"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  }
+}

@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # AI agent worktrees
-.claude/worktrees/
+.claude

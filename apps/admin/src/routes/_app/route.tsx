@@ -1,3 +1,4 @@
+import { SaveIcon } from "@repo/icons";
 import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_app")({
@@ -11,11 +12,11 @@ function RouteComponent() {
         <Link
           to="/"
           activeProps={{
-            className: "font-bold",
+            className: "font-bold text-indigo-500",
           }}
           activeOptions={{ exact: true }}
         >
-          Home
+          首页
         </Link>
         <Link
           to="/about"
@@ -23,7 +24,7 @@ function RouteComponent() {
             className: "font-bold",
           }}
         >
-          About
+          关于
         </Link>
         <Link
           to="/posts/category/{-$category}"
@@ -35,6 +36,8 @@ function RouteComponent() {
           Posts
         </Link>
       </div>
+      <hr />
+      <SaveIcon />
       <hr />
       <Outlet />
     </div>
