@@ -13,7 +13,9 @@
   "devDependencies": {
     "@emnapi/core": "catalog:dev",
     "@emnapi/runtime": "catalog:dev",
+    "@repo/ui": "workspace:*",
     "depcat": "catalog:dev",
+    "unocss": "catalog:ui",
     "vite-plus": "catalog:dev"
   },
   "engines": {

@@ -95,9 +95,21 @@ const SVG_ATTR_MAP: Record<string, string> = {
 const fixSvgAttrs = (body: string) =>
   Object.entries(SVG_ATTR_MAP).reduce((s, [from, to]) => s.replaceAll(from, to), body);
 
-const generateTsx = (componentName: string, body: string) =>
-  `import type { SVGProps } from 'react'
+const generateTsx = (componentName: string, iconifyId: string, body: string) => {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32"><style>:root{color:#111}@media(prefers-color-scheme:dark){:root{color:#eee}}</style>${body}</svg>`;
+  const preview = `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`;
 
+  const [collection] = iconifyId.split(":");
+
+  return `import type { SVGProps } from 'react'
+
+/**
+ * **${componentName}** &nbsp;&nbsp; \`${iconifyId}\`
+ *
+ * ![](${preview})
+ *
+ * @see https://icones.js.org/collection/${collection}?icon=${iconifyId}
+ */
 export function ${componentName}(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}>
@@ -107,6 +119,7 @@ export function ${componentName}(props: SVGProps<SVGSVGElement>) {
 }
 export default ${componentName}
 `;
+};
 
 async function generateIndex(): Promise<number> {
   const files = (await glob("*.tsx", { cwd: componentsDir })).sort();
@@ -185,7 +198,7 @@ for (const { componentName, collection, iconName } of entries) {
     continue;
   }
 
-  await fs.outputFile(filePath, generateTsx(componentName, icon.body));
+  await fs.outputFile(filePath, generateTsx(componentName, `${collection}:${iconName}`, icon.body));
   console.log(`  ✓ ${fileName}.tsx  (${collection}:${iconName})`);
   generated++;
 }

@@ -4,14 +4,36 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./hooks/*": "./src/hooks/*.ts",
-    "./lib/*": "./src/lib/*.ts"
+    ".": {
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./preset": {
+      "import": "./src/preset/index.ts",
+      "default": "./src/preset/index.ts"
+    },
+    "./uno.config": {
+      "import": "./uno.config.ts",
+      "default": "./uno.config.ts"
+    },
+    "./*": {
+      "import": "./src/components/*.tsx",
+      "default": "./src/components/*.tsx"
+    },
+    "./hooks/*": {
+      "import": "./src/hooks/*.ts",
+      "default": "./src/hooks/*.ts"
+    },
+    "./lib/*": {
+      "import": "./src/lib/*.ts",
+      "default": "./src/lib/*.ts"
+    }
   },
   "scripts": {
     "check": "vp check"
   },
   "dependencies": {
+    "@repo/icons": "workspace:*",
     "class-variance-authority": "catalog:ui",
     "clsx": "catalog:ui",
     "radix-ui": "catalog:ui"
@@ -20,6 +42,7 @@
     "@types/react": "catalog:dev",
     "@types/react-dom": "catalog:dev",
     "typescript": "catalog:dev",
+    "unocss": "catalog:ui",
     "vite-plus": "catalog:dev"
   },
   "peerDependencies": {
