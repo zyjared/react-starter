@@ -1,5 +1,5 @@
 {
-  "unocss.root": ["packages/ui", "apps/admin"],
+  "unocss.root": ["packages/ui"],
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "oxc.fmt.configPath": "./vite.config.ts",
   "editor.formatOnSave": true,
