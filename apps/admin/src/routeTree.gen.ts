@@ -13,6 +13,7 @@ import { Route as PostsRouteRouteImport } from "./routes/posts/route";
 import { Route as AppRouteRouteImport } from "./routes/_app/route";
 import { Route as AppIndexRouteImport } from "./routes/_app/index";
 import { Route as PostsPostIdRouteImport } from "./routes/posts/$postId";
+import { Route as DevUiRouteImport } from "./routes/dev/ui";
 import { Route as AppTodoRouteImport } from "./routes/_app/todo";
 import { Route as AppAboutRouteImport } from "./routes/_app/about";
 import { Route as PostsCategoryChar123CategoryChar125RouteImport } from "./routes/posts/category.{-$category}";
@@ -36,6 +37,11 @@ const PostsPostIdRoute = PostsPostIdRouteImport.update({
   path: "/$postId",
   getParentRoute: () => PostsRouteRoute,
 } as any);
+const DevUiRoute = DevUiRouteImport.update({
+  id: "/dev/ui",
+  path: "/dev/ui",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const AppTodoRoute = AppTodoRouteImport.update({
   id: "/todo",
   path: "/todo",
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   "/posts": typeof PostsRouteRouteWithChildren;
   "/about": typeof AppAboutRoute;
   "/todo": typeof AppTodoRoute;
+  "/dev/ui": typeof DevUiRoute;
   "/posts/$postId": typeof PostsPostIdRoute;
   "/posts/category/{-$category}": typeof PostsCategoryChar123CategoryChar125Route;
 }
@@ -65,6 +72,7 @@ export interface FileRoutesByTo {
   "/posts": typeof PostsRouteRouteWithChildren;
   "/about": typeof AppAboutRoute;
   "/todo": typeof AppTodoRoute;
+  "/dev/ui": typeof DevUiRoute;
   "/posts/$postId": typeof PostsPostIdRoute;
   "/": typeof AppIndexRoute;
   "/posts/category/{-$category}": typeof PostsCategoryChar123CategoryChar125Route;
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   "/posts": typeof PostsRouteRouteWithChildren;
   "/_app/about": typeof AppAboutRoute;
   "/_app/todo": typeof AppTodoRoute;
+  "/dev/ui": typeof DevUiRoute;
   "/posts/$postId": typeof PostsPostIdRoute;
   "/_app/": typeof AppIndexRoute;
   "/posts/category/{-$category}": typeof PostsCategoryChar123CategoryChar125Route;
@@ -86,16 +95,25 @@ export interface FileRouteTypes {
     | "/posts"
     | "/about"
     | "/todo"
+    | "/dev/ui"
     | "/posts/$postId"
     | "/posts/category/{-$category}";
   fileRoutesByTo: FileRoutesByTo;
-  to: "/posts" | "/about" | "/todo" | "/posts/$postId" | "/" | "/posts/category/{-$category}";
+  to:
+    | "/posts"
+    | "/about"
+    | "/todo"
+    | "/dev/ui"
+    | "/posts/$postId"
+    | "/"
+    | "/posts/category/{-$category}";
   id:
     | "__root__"
     | "/_app"
     | "/posts"
     | "/_app/about"
     | "/_app/todo"
+    | "/dev/ui"
     | "/posts/$postId"
     | "/_app/"
     | "/posts/category/{-$category}";
@@ -104,6 +122,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   AppRouteRoute: typeof AppRouteRouteWithChildren;
   PostsRouteRoute: typeof PostsRouteRouteWithChildren;
+  DevUiRoute: typeof DevUiRoute;
 }
 
 declare module "@tanstack/react-router" {
@@ -135,6 +154,13 @@ declare module "@tanstack/react-router" {
       fullPath: "/posts/$postId";
       preLoaderRoute: typeof PostsPostIdRouteImport;
       parentRoute: typeof PostsRouteRoute;
+    };
+    "/dev/ui": {
+      id: "/dev/ui";
+      path: "/dev/ui";
+      fullPath: "/dev/ui";
+      preLoaderRoute: typeof DevUiRouteImport;
+      parentRoute: typeof rootRouteImport;
     };
     "/_app/todo": {
       id: "/_app/todo";
@@ -189,6 +215,7 @@ const PostsRouteRouteWithChildren = PostsRouteRoute._addFileChildren(PostsRouteR
 const rootRouteChildren: RootRouteChildren = {
   AppRouteRoute: AppRouteRouteWithChildren,
   PostsRouteRoute: PostsRouteRouteWithChildren,
+  DevUiRoute: DevUiRoute,
 };
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

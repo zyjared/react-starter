@@ -1,44 +1,39 @@
-import { definePreset, type Preset } from "unocss";
+import { type Preset } from "unocss";
 
-import { shortcuts } from "./sortcuts";
-import { rules } from "./rules";
-import { buildPreflights } from "./preflights";
-import { buildTheme, defaults, type ColorTokens } from "./theme";
+import { THEME, type Theme } from "./theme";
+import type { Colors } from "./colors";
+import { SHORTCUTS } from "./shortcuts";
+import { RULES } from "./rules";
+import { PREFLIGHTS } from "./preflights";
+
+export { violet, amber, ocean, rose } from "./palettes";
+
+// ── Preset options ────────────────────────────────────────────────────────────
 
 export interface UIPresetOptions {
   prefix?: string | string[];
 
   /**
-   * Override individual light-mode color tokens.
-   * Only `brand` is typically needed — all others have defaults.
-   *
-   * Auto-derived (never set manually):
-   *   brand-50…900 · brand-contrast
-   *
-   * Focus ring: use `ring-brand/50` directly in components.
+   * Override color tokens for the default theme's light mode.
+   * Only `brand` is typically needed — all others have sensible defaults.
    *
    * @example
-   * colors: { brand: "oklch(0.7 0.15 30)" }  // warm amber
+   * colors: { brand: "oklch(0.7 0.15 30)" }
    */
-  colors?: Partial<ColorTokens>;
+  colors?: Colors;
 }
 
-export const presetUI = definePreset<UIPresetOptions>((options = {}) => {
-  const { prefix, colors } = options;
+// ── Preset ────────────────────────────────────────────────────────────────────
 
-  const light = { ...defaults, ...colors };
+export function presetUI(options: UIPresetOptions = {}): Preset<Theme> {
+  const { prefix } = options;
 
-  const preset: Preset = {
+  return {
     name: "@repo/ui",
     prefix,
-
-    theme: buildTheme(light),
-
-    shortcuts,
-    rules,
-
-    preflights: buildPreflights(colors),
+    theme: THEME,
+    shortcuts: SHORTCUTS,
+    rules: RULES,
+    preflights: PREFLIGHTS,
   };
-
-  return preset;
-});
+}

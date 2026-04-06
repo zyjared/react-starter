@@ -8,17 +8,13 @@
       "import": "./src/index.ts",
       "default": "./src/index.ts"
     },
-    "./preset": {
-      "import": "./src/preset/index.ts",
-      "default": "./src/preset/index.ts"
-    },
     "./uno.config": {
       "import": "./uno.config.ts",
       "default": "./uno.config.ts"
     },
-    "./*": {
-      "import": "./src/components/*.tsx",
-      "default": "./src/components/*.tsx"
+    "./preset": {
+      "import": "./src/preset/index.ts",
+      "default": "./src/preset/index.ts"
     },
     "./hooks/*": {
       "import": "./src/hooks/*.ts",
@@ -27,6 +23,10 @@
     "./lib/*": {
       "import": "./src/lib/*.ts",
       "default": "./src/lib/*.ts"
+    },
+    "./*": {
+      "import": "./src/components/*.tsx",
+      "default": "./src/components/*.tsx"
     }
   },
   "scripts": {

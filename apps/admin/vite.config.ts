@@ -7,6 +7,9 @@ import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import UnoCSS from "unocss/vite";
 
 export default defineConfig({
+  resolve: {
+    tsconfigPaths: true,
+  },
   plugins: [
     tanstackRouter({
       target: "react",
@@ -15,8 +18,6 @@ export default defineConfig({
     { enforce: "pre", ...mdx() },
     react({ include: /\.(mdx|js|jsx|ts|tsx)$/ }),
     babel({ presets: [reactCompilerPreset()] }),
-    UnoCSS({
-      inspector: false,
-    }) as PluginOption,
+    UnoCSS() as PluginOption,
   ],
 });

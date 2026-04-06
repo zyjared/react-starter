@@ -1,3 +1,3 @@
 import type { Rule } from "unocss";
 
-export const rules: Rule[] = [];
+export const RULES = [] satisfies Rule[];

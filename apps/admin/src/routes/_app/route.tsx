@@ -35,6 +35,14 @@ function RouteComponent() {
         >
           Posts
         </Link>
+        <Link
+          to="/dev/ui"
+          activeProps={{
+            className: "font-bold",
+          }}
+        >
+          UI Components
+        </Link>
       </div>
       <hr />
       <SaveIcon />
